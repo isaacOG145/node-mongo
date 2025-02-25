@@ -1,14 +1,17 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
-const personasRoutes = require('./routes/persona.routes');
+const express = require("express");
+
+const mongoose = require("mongoose");
+
+const bodyParser = require("body-parser");
+
+const personasRoutes = require("./routes/persona.routes");
+const productosRoutes = require("./routes/producto.routes");
 
 const app = express();
 const PORT = 3000;
-
 app.use(bodyParser.json());
-
-app.use('/api/personas', personasRoutes);
+app.use("/api/personas", personasRoutes);
+app.use("/api/productos", productosRoutes);
 
 //conexión a la base de datos
 
